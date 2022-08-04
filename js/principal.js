@@ -1,4 +1,4 @@
-var botonAdicionar = document.querySelectorAll("#adicionar-paciente");
+var botonAdicionar = document.querySelector("#adicionar-paciente");
 
 //declaro una función anónima para usar únicamente al capturar este botón. Las funciones anónimasno tienen un nombre declarado
 botonAdicionar.addEventListener("click", function (event) {
@@ -11,10 +11,7 @@ botonAdicionar.addEventListener("click", function (event) {
   var altura = form.altura.value;
   var gordura = form.gordura.value;
 
-  console.log(nombre);
-  console.log(peso);
-  console.log(altura);
-  console.log(gordura);
+  var tabla = document.querySelector("#tabla-pacientes");
 
   pacienteTr = document.createElement("tr");
   nombreTd = document.createElement("td");
@@ -22,7 +19,20 @@ botonAdicionar.addEventListener("click", function (event) {
   pesoTd = document.createElement("td");
   gorduraTd = document.createElement("td");
   imcTd = document.createElement("td");
-});
+
+  nombreTd.textContent = nombre;
+  alturaTd.textContent = altura;
+  pesoTd.textContent = peso;
+  gorduraTd.textContent = gordura;
+
+  pacienteTr.appendChild(nombreTd);
+  pacienteTr.appendChild(alturaTd);
+  pacienteTr.appendChild(pesoTd);
+  pacienteTr.appendChild(gorduraTd);
+
+  tabla.appendChild(pacienteTr);
+})
+
 
 var pacientes = document.querySelectorAll(".paciente");
 
