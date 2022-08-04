@@ -1,3 +1,10 @@
+var botonAdicionar = document.querySelectorAll("#adicionar-paciente");
+
+botonAdicionar.addEventListener("click", function () {
+  //declaro una función anónima para usar únicamente al capturar este botón. Las funciones anónimasno tienen un nombre declarado
+  console.log("Usted hizo un click en el bot{on adicionar");
+});
+
 var pacientes = document.querySelectorAll(".paciente");
 
 for (var i = 0; i < pacientes.length; i++) {
