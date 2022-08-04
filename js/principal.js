@@ -1,8 +1,27 @@
 var botonAdicionar = document.querySelectorAll("#adicionar-paciente");
 
-botonAdicionar.addEventListener("click", function () {
-  //declaro una función anónima para usar únicamente al capturar este botón. Las funciones anónimasno tienen un nombre declarado
-  console.log("Usted hizo un click en el bot{on adicionar");
+//declaro una función anónima para usar únicamente al capturar este botón. Las funciones anónimasno tienen un nombre declarado
+botonAdicionar.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  var form = document.querySelector("#form-adicionar");
+
+  var nombre = form.nombre.value;
+  var peso = form.peso.value;
+  var altura = form.altura.value;
+  var gordura = form.gordura.value;
+
+  console.log(nombre);
+  console.log(peso);
+  console.log(altura);
+  console.log(gordura);
+
+  pacienteTr = document.createElement("tr");
+  nombreTd = document.createElement("td");
+  alturaTd = document.createElement("td");
+  pesoTd = document.createElement("td");
+  gorduraTd = document.createElement("td");
+  imcTd = document.createElement("td");
 });
 
 var pacientes = document.querySelectorAll(".paciente");
